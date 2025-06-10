@@ -1,64 +1,66 @@
-html, body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+*{
     margin: 0;
     padding: 0;
-    height: 100%;
+    box-sizing: border-box;
+    font-family: "Inter";
+    font-optical-sizing: auto;
 }
-html {
-    background-color: #141414;
+
+a{
+    color: #fff;
+    text-decoration: none;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    background-image: linear-gradient(147deg, #12222a 9%, #040404 53%);
-    color: #ffffff;
-    overflow: auto;
+    height: 100vh;
+    background-image: linear-gradient(147deg, #1d506a 9%, #040404 53%);    
 }
 
-.wrapper {
+.header {
+    position: fixed;
     width: 100%;
-    height: 100%;
-    transform: rotateX(45) rotateY(45);
-    transform-style: preserve-3d;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 auto;
-}
-
-.scene {
-    width: 600px;
-    aspect-ratio: 1;
-    margin: 0 auto;
-    perspective: 1000px;
-}
-
-.sphere {
-    position: relative;
-    width: 70%;
-    height: 70%;
-    margin: 0 auto;
-    transform-style: preserve-3d;
-    animation: rotate 5s infinite linear;
-}
-
-.line {
-    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 1px dotted #06e0fd;
-    box-shadow: 1px 0px 20px -2px #000, 1px 0px 50px -2px #06e0fd;
+    padding: 20px 100px;
+    background-image: linear-gradient(60deg, #ffffff22, #ffffff33);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ffffff22;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
-@keyframes rotate {
-    to{
-        transform: rotateY(360deg) rotateX(360deg);
-    }
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, transparent, #ffffff44, transparent);
+    transition: .6s ease-in;
 }
+
+.header:hover::before{
+    left: 100%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a {
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover{
+    color: #ff0000;
+}
+
